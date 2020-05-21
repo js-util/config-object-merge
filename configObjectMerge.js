@@ -33,7 +33,7 @@ function configObjectMerge(target, newConfig, deepCloneNewConfig = true) {
 	}
 
 	// For each item in newConfig
-	for (let [key, val] of Object.entries(yourobject)) {
+	for (let [key, val] of Object.entries(newConfig)) {
 		
 		// get the original val
 		let originalVal = target[key];

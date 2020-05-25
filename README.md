@@ -59,6 +59,5 @@ let result = {
 }
 
 // ALTERNATIVELY, you could use its .all array varient
-// note this varient does not modify the original object
-configObjectMerge.all( [target,merge] );
+configObjectMerge.all( [{}, target, merge] );
 ```

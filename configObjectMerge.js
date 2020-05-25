@@ -68,7 +68,7 @@ function configObjectMerge(target, newConfig, deepCloneNewConfig = true) {
 }
 /**
  * Given an array of config like object, merge them together.
- * This is an array varient of `configObjectMerge`
+ * This is an array varient of `configObjectMerge`, the first object in the array is modified instead.
  * 
  * @param {Array<Object>} configArr containing multiple config objects 
  * @param {Boolean} deepCloneNewConfig, deep clone the new config if set to avoid modification, 
@@ -78,8 +78,8 @@ function configObjectMerge(target, newConfig, deepCloneNewConfig = true) {
  * @return {Object} the target object that was merged
  */
 configObjectMerge.all = function all( configArr, deepCloneNewConfig = true ) {
-	let res = {};
-	for( let i=0; i<configArr.length; ++i ) {
+	let res = configArr[0] || {};
+	for( let i=1; i<configArr.length; ++i ) {
 		res = configObjectMerge(res, configArr[i], deepCloneNewConfig);
 	}
 	return res;

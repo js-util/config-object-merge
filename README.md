@@ -57,4 +57,8 @@ let result = {
 	"but"  : "and change this value",
 	"with" : "this extra field"
 }
+
+// ALTERNATIVELY, you could use its .all array varient
+// note this varient does not modify the original object
+configObjectMerge.all( [target,merge] );
 ```
